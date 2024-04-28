@@ -39,6 +39,19 @@ testing2();
 console.log('global scoped ', data);
 
 // 2) Hoisting
+
+/**
+ *  While js engine executing the js code, it involved in multiple steps,
+ *   Step 1) Memory creation phase
+ *      => it will check one by one line to collection variables and functions. then
+ *         for variables, it will allocate the memory and put undefined value as placeholder.
+ *         for functions, it will allocate the memory and put entire function declarations or lines of statements.
+ *   Step 2) Code execution phase
+ *      => finally execute the code one by one line, if it is executes the variable means
+ *         it will replace the undefined with actual initial value if it present.
+ *      => Whenever, JS executes the function, it will create the execution context of the function on top of global execution context
+ *         inside call stack.
+ */
 console.log(typeof getData);
 getData();
 // arrow function is hoisted with undefined as placeholder
